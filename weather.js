@@ -46,13 +46,14 @@ function generateHTML(data) {
         <p><strong>Country: </strong>${mainInfo.country}</p>
         <p><strong>Current Weather: </strong>${mainInfo.currWeather} <img class="customIcon" src="http://openweathermap.org/img/wn/${mainInfo.currIcon}@2x.png"></p>
         `;
-        let tableData = new Array(); // new array Holds weekly weather data
-        info.daily.map(function (el, index) {
-            tableData.push(
-                `<tr><th scope="row">${index}</th><td>${el.temp.min}°C</td><td>${el.temp.max}°C</td><td>
+        // let tableData = new Array(); // new array Holds weekly weather data
+        const tableData = info.daily
+            .map(
+                (el, index) =>
+                    `<tr><th scope="row">${index}</th><td>${el.temp.min}°C</td><td>${el.temp.max}°C</td><td>
                 <img src="http://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png"></td></tr>`
-            );
-        });
+            )
+            .join("");
         table.setAttribute("class", "table table-striped table-bordered");
         table.innerHTML = `
         <thead>
@@ -65,7 +66,7 @@ function generateHTML(data) {
             </tr>
         </thead>
         <tbody>
-            ${tableData.join("")}
+            ${tableData}
         </tbody>`; // Table html end
         section.appendChild(table);
     });
