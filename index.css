@@ -1,15 +1,29 @@
-.container{
-  width: 70%;
-  margin: auto;
-  margin-top: 2%;
-  text-align: center;
+.container {
+    width: 70%;
+    margin: auto;
+    margin-top: 2%;
+    text-align: center;
 }
 
-th{
-  padding: 10px;
+th {
+    padding: 10px;
 }
 
-img{
-  width: 40px;
-  height: auto;
+img {
+    width: 40px;
+    height: auto;
+}
+
+table {
+    width: 100%;
+}
+.table td {
+    vertical-align: middle;
+}
+.customIcon {
+    background: #c4c4c4;
+    border-radius: 50%;
+}
+#info p {
+    text-transform: capitalize;
 }
